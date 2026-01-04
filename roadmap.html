@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarot App Roadmap + Yearly Plan</title>
+<style>
+body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background-color: #f4f4f4; }
+h1, h2 { color: #333; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+th { background-color: #eee; }
+.section { margin-bottom: 40px; }
+button { margin: 5px; padding: 10px 15px; cursor: pointer; }
+.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<h1>App Roadmaps 2026</h1>
+
+<button onclick="showSection('tarot')">Kế hoạch Tarot App</button>
+<button onclick="showSection('yearly')">Kế hoạch Năm Nay</button>
+
+<div id="tarot" class="section">
+<h2>Tarot App – Kế hoạch phát triển</h2>
+
+<div class="section">
+<h2>1. Core Features – Tính năng chính</h2>
+<table>
+<tr><th>Tên việc</th><th>Ưu tiên</th></tr>
+<tr><td>Đăng nhập bằng Google</td><td>Sau</td></tr>
+<tr><td>Đăng nhập bằng Apple</td><td>Sau</td></tr>
+<tr><td>IAP Android</td><td>Trước</td></tr>
+<tr><td>IAP iOS</td><td>Trước</td></tr>
+<tr><td>Xem hôm nay</td><td>Trước</td></tr>
+<tr><td>Bảng xếp hạng</td><td>Sau</td></tr>
+<tr><td>Biểu đồ phân tích</td><td>Sau</td></tr>
+<tr><td>Hệ thống reward quà hàng ngày</td><td>Trước</td></tr>
+<tr><td>Event sao rơi đặc biệt</td><td>Sau</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>2. Ngầm – Tính năng backend / system</h2>
+<table>
+<tr><th>Tên việc</th><th>Ưu tiên</th></tr>
+<tr><td>Check deviceId chặn spam lượt free</td><td>Trước</td></tr>
+<tr><td>Remote config bật/tắt xác thực email</td><td>Trước</td></tr>
+<tr><td>Remote config banner quảng cáo cho các app khác</td><td>Sau</td></tr>
+<tr><td>Remote config bật/tắt banner quảng cáo AdMob</td><td>Trước</td></tr>
+<tr><td>Remote config nâng cao, switch adUnit ID</td><td>Sau</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>3. Tinh chỉnh – UX / Ads / Engagement</h2>
+<table>
+<tr><th>Tên việc</th><th>Ưu tiên</th></tr>
+<tr><td>Gợi ý bay đến cửa hàng với item tương ứng</td><td>Trước</td></tr>
+<tr><td>Xử lý case quảng cáo AdMob không phân phối</td><td>Trước</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>4. Thay đổi hệ thống / DevOps</h2>
+<table>
+<tr><th>Tên việc</th><th>Ưu tiên</th></tr>
+<tr><td>Tách môi trường Dev và Live</td><td>Trước</td></tr>
+<tr><td>Sử dụng Cloud Function thay cho BE</td><td>Sau</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>5. Ưu tiên triển khai</h2>
+<h3>Phase 1 – Cơ bản (MVP – Public-ready)</h3>
+<ol>
+<li>IAP Android</li>
+<li>IAP iOS</li>
+<li>Xem hôm nay</li>
+<li>Reward quà hàng ngày</li>
+<li>Check deviceId chặn spam lượt free</li>
+<li>Remote config bật/tắt xác thực email</li>
+<li>Remote config bật/tắt banner quảng cáo AdMob</li>
+<li>Tách môi trường Dev/Live</li>
+</ol>
+
+<h3>Phase 2 – Tinh chỉnh UX / Ads</h3>
+<ol>
+<li>Gợi ý bay đến cửa hàng với item tương ứng</li>
+<li>Xử lý case quảng cáo AdMob không phân phối</li>
+</ol>
+
+<h3>Phase 3 – Nâng cao / Mở rộng</h3>
+<ol>
+<li>Đăng nhập bằng Google</li>
+<li>Đăng nhập bằng Apple</li>
+<li>Bảng xếp hạng</li>
+<li>Biểu đồ phân tích</li>
+<li>Event sao rơi đặc biệt</li>
+<li>Remote config nâng cao / switch adUnit ID</li>
+<li>Remote config banner quảng cáo cho các app khác</li>
+<li>Sử dụng Cloud Function thay cho BE</li>
+</ol>
+</div>
+</div>
+
+<div id="yearly" class="section hidden">
+<h2>Roadmap App 2026 – Các App Năm Nay</h2>
+<table>
+<tr><th>STT</th><th>App</th><th>Thời gian</th><th>Mô tả chi tiết</th><th>Lưu ý / Tính năng</th></tr>
+<tr><td>1</td><td>Xem chỉ tay</td><td>2 tháng</td><td>User chụp ảnh tay (trái/phải), phân biệt nam/nữ → AI bói theo tay + giới tính</td><td>Trả phí theo lượt</td></tr>
+<tr><td>2</td><td>Nhân tướng học</td><td>2 tháng</td><td>User chụp ảnh mặt, phân biệt nam/nữ → AI bói theo hình ảnh + giới tính</td><td>Trả phí theo lượt</td></tr>
+<tr><td>3</td><td>Cung hoàng đạo</td><td>4 tháng</td><td>User nhập ngày sinh hoặc chọn cung → phân tích hợp các cung khác về tình yêu, tình bạn, đồng nghiệp, kẻ thù → AI phân tích 1 lần, lưu cứng, xem ngày hôm nay</td><td>Subscription + cache 1 lần/ngày</td></tr>
+</table>
+</div>
+
+<script>
+function showSection(id) {
+  document.getElementById('tarot').classList.add('hidden');
+  document.getElementById('yearly').classList.add('hidden');
+  document.getElementById(id).classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
