@@ -1,125 +1,490 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tarot App Roadmap + Yearly Plan</title>
-<style>
-body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background-color: #f4f4f4; }
-h1, h2 { color: #333; }
-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-th { background-color: #eee; }
-.section { margin-bottom: 40px; }
-button { margin: 5px; padding: 10px 15px; cursor: pointer; }
-.hidden { display: none; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Roadmap 2026</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem 2rem;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #667eea;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+nav {
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.nav-content button {
+  background: none;
+  border: none;
+  padding: 1rem 0;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #555;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-content button:hover {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.nav-content button.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+  font-weight: 600;
+}
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.content-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.section {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #667eea;
+}
+
+h3 {
+  color: #555;
+  margin: 1.5rem 0 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f8f9fa;
+  color: #667eea;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #f8f9fa;
+}
+
+ol {
+  margin-left: 1.5rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.prompt-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.prompt-card:hover {
+  transform: translateY(-5px);
+}
+
+.prompt-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.prompt-card p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.policy-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.policy-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.policy-card p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.policy-button {
+  color: white;
+  text-decoration: none;
+  background: rgba(255,255,255,0.2);
+  padding: 0.75rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: block;
+  text-align: center;
+}
+
+.policy-button:hover {
+  background: rgba(255,255,255,0.35);
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.policy-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.policy-link:hover {
+  color: #764ba2;
+  transform: translateX(5px);
+}
+
+footer {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #666;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+}
+
+.footer-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
 </style>
 </head>
 <body>
 
-<h1>App Roadmaps 2026</h1>
+<header>
+    <div class="header-content">
+        <h1>🚀 App Roadmap 2026</h1>
+    </div>
+</header>
 
-<button onclick="showSection('tarot')">Kế hoạch Tarot App</button>
-<button onclick="showSection('yearly')">Kế hoạch Năm Nay</button>
+<nav>
+    <div class="nav-content">
+        <button onclick="showSection('tarot')" class="active">Bí ẩn Tarot</button>
+        <button onclick="showSection('yearly')">Kế hoạch Năm Nay</button>
+        <button onclick="showSection('ai-prompt')">AI Prompt</button>
+        <button onclick="showSection('policy')">Chính sách & Dữ liệu</button>
+    </div>
+</nav>
 
-<div id="tarot" class="section">
-<h2>Tarot App – Kế hoạch phát triển</h2>
+<main>
+    <div id="tarot" class="section active">
+        <div class="content-card">
+            <h2>Bí ẩn Tarot – Kế hoạch còn lại 2026</h2>
 
-<div class="section">
-<h2>1. Core Features – Tính năng chính</h2>
-<table>
-<tr><th>Tên việc</th><th>Ưu tiên</th></tr>
-<tr><td>Đăng nhập bằng Google</td><td>Sau</td></tr>
-<tr><td>Đăng nhập bằng Apple</td><td>Sau</td></tr>
-<tr><td>IAP Android</td><td>Trước</td></tr>
-<tr><td>IAP iOS</td><td>Trước</td></tr>
-<tr><td>Xem hôm nay</td><td>Trước</td></tr>
-<tr><td>Bảng xếp hạng</td><td>Sau</td></tr>
-<tr><td>Biểu đồ phân tích</td><td>Sau</td></tr>
-<tr><td>Hệ thống reward quà hàng ngày</td><td>Trước</td></tr>
-<tr><td>Event sao rơi đặc biệt</td><td>Sau</td></tr>
-</table>
-</div>
+            <h3>1. Core Features – Tính năng chính</h3>
+            <table>
+                <tr><th>Tên việc</th><th>Thứ tự ưu tiên</th></tr>
+                <tr><td>Đăng nhập bằng Google</td><td>Sau</td></tr>
+                <tr><td>Đăng nhập bằng Apple</td><td>Sau</td></tr>
+                <tr><td>IAP Android</td><td>Trước</td></tr>
+                <tr><td>IAP iOS</td><td>Trước</td></tr>
+                <tr><td>Xem hôm nay</td><td>Trước</td></tr>
+                <tr><td>Bảng xếp hạng</td><td>Sau</td></tr>
+                <tr><td>Biểu đồ phân tích</td><td>Sau</td></tr>
+                <tr><td>Hệ thống reward quà hàng ngày</td><td>Trước</td></tr>
+                <tr><td>Event sao rơi đặc biệt</td><td>Sau</td></tr>
+            </table>
 
-<div class="section">
-<h2>2. Ngầm – Tính năng backend / system</h2>
-<table>
-<tr><th>Tên việc</th><th>Ưu tiên</th></tr>
-<tr><td>Check deviceId chặn spam lượt free</td><td>Trước</td></tr>
-<tr><td>Remote config bật/tắt xác thực email</td><td>Trước</td></tr>
-<tr><td>Remote config banner quảng cáo cho các app khác</td><td>Sau</td></tr>
-<tr><td>Remote config bật/tắt banner quảng cáo AdMob</td><td>Trước</td></tr>
-<tr><td>Remote config nâng cao, switch adUnit ID</td><td>Sau</td></tr>
-</table>
-</div>
+            <h3>2. Tính năng ngầm / Firestore DB</h3>
+            <table>
+                <tr><th>Tên việc</th><th>Ưu tiên</th></tr>
+                <tr><td>Check deviceId chặn spam lượt free</td><td>Trước</td></tr>
+                <tr><td>Remote config bật/tắt xác thực email</td><td>Trước</td></tr>
+                <tr><td>Remote config banner quảng cáo cho các app khác</td><td>Sau</td></tr>
+                <tr><td>Remote config bật/tắt banner quảng cáo AdMob</td><td>Trước</td></tr>
+                <tr><td>Remote config nâng cao, switch adUnit ID</td><td>Sau</td></tr>
+            </table>
 
-<div class="section">
-<h2>3. Tinh chỉnh – UX / Ads / Engagement</h2>
-<table>
-<tr><th>Tên việc</th><th>Ưu tiên</th></tr>
-<tr><td>Gợi ý bay đến cửa hàng với item tương ứng</td><td>Trước</td></tr>
-<tr><td>Xử lý case quảng cáo AdMob không phân phối</td><td>Trước</td></tr>
-</table>
-</div>
+            <h3>3. Tinh chỉnh – UX / Ads / Engagement</h3>
+            <table>
+                <tr><th>Tên việc</th><th>Ưu tiên</th></tr>
+                <tr><td>Gợi ý bay đến cửa hàng với item tương ứng</td><td>Trước</td></tr>
+                <tr><td>Xử lý case quảng cáo AdMob không phân phối</td><td>Trước</td></tr>
+            </table>
 
-<div class="section">
-<h2>4. Thay đổi hệ thống / DevOps</h2>
-<table>
-<tr><th>Tên việc</th><th>Ưu tiên</th></tr>
-<tr><td>Tách môi trường Dev và Live</td><td>Trước</td></tr>
-<tr><td>Sử dụng Cloud Function thay cho BE</td><td>Sau</td></tr>
-</table>
-</div>
+            <h3>4. Thay đổi hệ thống / DevOps</h3>
+            <table>
+                <tr><th>Tên việc</th><th>Ưu tiên</th></tr>
+                <tr><td>Tách môi trường Dev và Live</td><td>Trước</td></tr>
+                <tr><td>Sử dụng Cloud Function thay cho BE</td><td>Sau</td></tr>
+            </table>
 
-<div class="section">
-<h2>5. Ưu tiên triển khai</h2>
-<h3>Phase 1 – Cơ bản (MVP – Public-ready)</h3>
-<ol>
-<li>IAP Android</li>
-<li>IAP iOS</li>
-<li>Xem hôm nay</li>
-<li>Reward quà hàng ngày</li>
-<li>Check deviceId chặn spam lượt free</li>
-<li>Remote config bật/tắt xác thực email</li>
-<li>Remote config bật/tắt banner quảng cáo AdMob</li>
-<li>Tách môi trường Dev/Live</li>
-</ol>
+            <h3>5. Ưu tiên triển khai</h3>
 
-<h3>Phase 2 – Tinh chỉnh UX / Ads</h3>
-<ol>
-<li>Gợi ý bay đến cửa hàng với item tương ứng</li>
-<li>Xử lý case quảng cáo AdMob không phân phối</li>
-</ol>
+            <h4>Phase 1 – Cơ bản (MVP – Public-ready)</h4>
+            <ol>
+                <li>IAP Android</li>
+                <li>IAP iOS</li>
+                <li>Xem hôm nay</li>
+                <li>Reward quà hàng ngày</li>
+                <li>Check deviceId chặn spam lượt free</li>
+                <li>Remote config bật/tắt xác thực email</li>
+                <li>Remote config bật/tắt banner quảng cáo AdMob</li>
+                <li>Tách môi trường Dev/Live</li>
+            </ol>
 
-<h3>Phase 3 – Nâng cao / Mở rộng</h3>
-<ol>
-<li>Đăng nhập bằng Google</li>
-<li>Đăng nhập bằng Apple</li>
-<li>Bảng xếp hạng</li>
-<li>Biểu đồ phân tích</li>
-<li>Event sao rơi đặc biệt</li>
-<li>Remote config nâng cao / switch adUnit ID</li>
-<li>Remote config banner quảng cáo cho các app khác</li>
-<li>Sử dụng Cloud Function thay cho BE</li>
-</ol>
-</div>
-</div>
+            <h4>Phase 2 – Tinh chỉnh UX</h4>
+            <ol>
+                <li>Gợi ý bay đến cửa hàng với item tương ứng</li>
+                <li>Xử lý case quảng cáo AdMob không phân phối</li>
+            </ol>
 
-<div id="yearly" class="section hidden">
-<h2>Roadmap App 2026 – Các App Năm Nay</h2>
-<table>
-<tr><th>STT</th><th>App</th><th>Thời gian</th><th>Mô tả chi tiết</th><th>Lưu ý / Tính năng</th></tr>
-<tr><td>1</td><td>Xem chỉ tay</td><td>2 tháng</td><td>User chụp ảnh tay (trái/phải), phân biệt nam/nữ → AI bói theo tay + giới tính</td><td>Trả phí theo lượt</td></tr>
-<tr><td>2</td><td>Nhân tướng học</td><td>2 tháng</td><td>User chụp ảnh mặt, phân biệt nam/nữ → AI bói theo hình ảnh + giới tính</td><td>Trả phí theo lượt</td></tr>
-<tr><td>3</td><td>Cung hoàng đạo</td><td>4 tháng</td><td>User nhập ngày sinh hoặc chọn cung → phân tích hợp các cung khác về tình yêu, tình bạn, đồng nghiệp, kẻ thù → AI phân tích 1 lần, lưu cứng, xem ngày hôm nay</td><td>Subscription + cache 1 lần/ngày</td></tr>
-</table>
-</div>
+            <h4>Phase 3 – Nâng cao / Mở rộng</h4>
+            <ol>
+                <li>Đăng nhập bằng Google</li>
+                <li>Đăng nhập bằng Apple</li>
+                <li>Bảng xếp hạng</li>
+                <li>Biểu đồ phân tích</li>
+                <li>Event sao rơi đặc biệt</li>
+                <li>Remote config nâng cao / switch adUnit ID</li>
+                <li>Remote config banner quảng cáo cho các app khác</li>
+                <li>Sử dụng Cloud Function thay cho BE</li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="yearly" class="section">
+        <div class="content-card">
+            <h2>Project dự kiến 2026</h2>
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>App</th>
+                    <th>Thời gian ước tính</th>
+                    <th>Mô tả chi tiết</th>
+                    <th>Hình thức kiếm tiền</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Xem chỉ tay</td>
+                    <td>2 tháng (T5-T6)</td>
+                    <td>User chụp ảnh tay (trái/phải), phân biệt nam/nữ → AI bói theo tay + giới tính</td>
+                    <td>Trả phí theo lượt</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Nhân tướng học</td>
+                    <td>2 tháng (T7-T8)</td>
+                    <td>User chụp ảnh mặt, phân biệt nam/nữ → AI bói theo hình ảnh + giới tính</td>
+                    <td>Trả phí theo lượt</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Cung hoàng đạo</td>
+                    <td>5 tháng (T8-12)</td>
+                    <td>User nhập ngày sinh hoặc chọn cung → phân tích hợp các cung khác về tình yêu, tình bạn, đồng nghiệp, kẻ thù → AI phân tích 1 lần, lưu cứng, xem ngày hôm nay</td>
+                    <td>Subscription + cache 1 lần/ngày</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="ai-prompt" class="section">
+        <div class="content-card">
+            <h2>AI Prompt Templates</h2>
+
+            <div class="prompt-grid">
+                <div class="prompt-card">
+                    <h4>🔮 Tarot App</h4>
+                    <p>Tạo prompt cho AI phân tích lá bài Tarot, kết hợp với ngữ cảnh câu hỏi của người dùng để đưa ra lời khuyên sâu sắc và có ý nghĩa.</p>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>⭐ Cung Hoàng Đạo</h4>
+                    <p>Xây dựng prompt phân tích tính cách, vận mệnh theo 12 cung hoàng đạo, bao gồm tình yêu, sự nghiệp, tài chính và sức khỏe hàng ngày.</p>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>🖐️ Bói Chỉ Tay</h4>
+                    <p>Thiết kế prompt để AI phân tích đường chỉ tay từ hình ảnh, đọc vận mệnh, tính cách và những điều đặc biệt trong cuộc đời người dùng.</p>
+                </div>
+
+                <div class="prompt-card">
+                    <h4>😊 Bói Khuôn Mặt</h4>
+                    <p>Tạo prompt nhân tướng học, phân tích các đặc điểm khuôn mặt để đưa ra nhận định về tính cách, vận may và khuynh hướng cuộc sống.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="policy" class="section">
+        <div class="content-card">
+            <h2>Chính sách & Dữ liệu</h2>
+
+            <div class="prompt-grid">
+                <div class="policy-card">
+                    <h4>🔮 Bí ẩn Tarot</h4>
+                    <p style="margin-bottom: 1rem;">Quản lý thông tin và dữ liệu cá nhân của bạn trong ứng dụng Tarot.</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="https://pham-tien-thang.github.io/policy/tarot_app/policy_tarot" target="_blank" class="policy-button">
+                            📄 Chính sách bảo mật →
+                        </a>
+                        <a href="https://pham-tien-thang.github.io/policy/tarot_app/delete_data" target="_blank" class="policy-button">
+                            🗑️ Xóa tài khoản →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="policy-card">
+                    <h4>🖐️ Xem Chỉ Tay</h4>
+                    <p style="margin-bottom: 1rem;">Quản lý thông tin và dữ liệu cá nhân của bạn trong ứng dụng Xem Chỉ Tay.</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="https://pham-tien-thang.github.io/policy/palmistry_app/policy_palmistry" target="_blank" class="policy-button">
+                            📄 Chính sách bảo mật →
+                        </a>
+                        <a href="https://pham-tien-thang.github.io/policy/palmistry_app/delete_data" target="_blank" class="policy-button">
+                            🗑️ Xóa tài khoản →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="policy-card">
+                    <h4>😊 Nhân Tướng Học</h4>
+                    <p style="margin-bottom: 1rem;">Quản lý thông tin và dữ liệu cá nhân của bạn trong ứng dụng Nhân Tướng Học.</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="https://pham-tien-thang.github.io/policy/face_reading_app/policy_face" target="_blank" class="policy-button">
+                            📄 Chính sách bảo mật →
+                        </a>
+                        <a href="https://pham-tien-thang.github.io/policy/face_reading_app/delete_data" target="_blank" class="policy-button">
+                            🗑️ Xóa tài khoản →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="policy-card">
+                    <h4>⭐ Cung Hoàng Đạo</h4>
+                    <p style="margin-bottom: 1rem;">Quản lý thông tin và dữ liệu cá nhân của bạn trong ứng dụng Cung Hoàng Đạo.</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="https://pham-tien-thang.github.io/policy/zodiac_app/policy_zodiac" target="_blank" class="policy-button">
+                            📄 Chính sách bảo mật →
+                        </a>
+                        <a href="https://pham-tien-thang.github.io/policy/zodiac_app/delete_data" target="_blank" class="policy-button">
+                            🗑️ Xóa tài khoản →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-icon">🐱</div>
+        <p><strong>Made with ❤️ by Mèo Cưng</strong></p>
+        <p>© 2026 All Rights Reserved | Purr-fectly Crafted</p>
+    </div>
+</footer>
 
 <script>
-function showSection(id) {
-  document.getElementById('tarot').classList.add('hidden');
-  document.getElementById('yearly').classList.add('hidden');
-  document.getElementById(id).classList.remove('hidden');
+function showSection(sectionId) {
+  document.querySelectorAll('.section').forEach(section => {
+    section.classList.remove('active');
+  });
+  document.querySelectorAll('nav button').forEach(button => {
+    button.classList.remove('active');
+  });
+
+  document.getElementById(sectionId).classList.add('active');
+  event.target.classList.add('active');
 }
 </script>
 
