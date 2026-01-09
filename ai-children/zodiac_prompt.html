@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Prompt - App Roadmap 2026</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>🚀 App Roadmap 2026</h1>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-content">
+        <a href="../index.html">Bí ẩn Tarot</a>
+        <a href="../yearly.html">Kế hoạch Năm Nay</a>
+        <a href="../ai-prompt.html" class="active">AI Prompt</a>
+        <a href="../policy.html">Chính sách & Dữ liệu</a>
+    </div>
+</nav>
+
+<main>
+    <div class="content-card">
+        <div class="updating-container">
+            <div class="updating-icon">🔮</div>
+            <div class="updating-text">Copy json sau và điền <strong>Tên vật thể</strong> vào trường <strong>object_name:</strong> và ném vào AI là xong</div>
+            <div class="json-wrapper">
+                <button class="copy-button" onclick="copyJson()" title="Copy JSON">
+                    <span class="copy-icon">📋</span>
+                    <span class="copy-text">Copy JSON</span>
+                </button>
+                <div class="copy-success" id="copySuccess">✓ Đã copy!</div>
+                <pre class="json-display"><code id="jsonCode">{
+  "object_name": "Ghi tên thứ muốn tạo vào đây",
+
+  "style_name": "Retsy 3D Icon Aesthetic",
+  "retexture_mode": "stylized_3d_overlay",
+
+  "object_analysis": {
+    "preserve_silhouette": true,
+    "geometry_sensitive_mapping": true,
+    "detail_retention": "moderate — emphasize smooth shapes and clear outlines"
+  },
+
+  "material_properties": {
+    "base_material": [
+      "smooth matte plastic",
+      "glossy enamel plastic"
+    ],
+    "surface_details": [
+      "rounded corners and edges",
+      "soft, toy-like finish",
+      "minimal seam lines",
+      "subtle specular reflections"
+    ]
+  },
+
+  "lighting": {
+    "type": "studio soft light",
+    "intensity": "medium",
+    "shadows": "soft contact shadows",
+    "highlight_behavior": "small glossy highlights on curved surfaces"
+  },
+
+  "color_palette": {
+    "dominant_colors": ["#2F7056", "#EAE5E0", "#2A2D2E"],
+    "accent_colors": ["#B5832F", "#F5E9C8"]
+  },
+
+  "background": {
+    "color": "#F3F1EE",
+    "type": "solid",
+    "texture": "none"
+  }
+}
+
+}</code></pre>
+            </div>
+            <a href="../ai-prompt.html" class="back-button">← Quay lại</a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-icon">🐱</div>
+        <p><strong>Made with ❤️ by Mèo Cưng</strong></p>
+        <p>© 2026 All Rights Reserved | Purr-fectly Crafted</p>
+    </div>
+</footer>
+
+<script>
+    const jsonContent = `{
+      "goal": "create a new image inspired by the reference image without copying it",
+      "prompt": {
+        "core_scene": "describe the general context of the original image in a generic way",
+        "required_difference": "change some key elements such as colors, layout, characters, or props",
+        "visual_style": "maintain the overall style: 3D/2D, photorealistic, minimal, cartoon, etc.",
+        "composition_changes": [
+          "rearrange the positions of small objects",
+          "change size proportions"
+        ],
+        "detail_modifications": [
+          "change materials",
+          "slightly adjust lighting",
+          "slightly change patterns/textures",
+          "slightly modify shapes"
+        ]
+      },
+      "output_requirements": {
+        "copyright_safe": true,
+        "uniqueness_level": "medium",
+        "format": "PNG or JPG",
+        "resolution": "high",
+        "preserve_original_text": true,
+        "text_handling_rule": "any text, symbols, or numbers appearing in the original image must be preserved exactly in the new image"
+      }
+    }`;
+
+    function copyJson() {
+        navigator.clipboard.writeText(jsonContent).then(function() {
+            const successMsg = document.getElementById('copySuccess');
+            successMsg.style.display = 'block';
+            setTimeout(function() {
+                successMsg.style.display = 'none';
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = jsonContent;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                const successMsg = document.getElementById('copySuccess');
+                successMsg.style.display = 'block';
+                setTimeout(function() {
+                    successMsg.style.display = 'none';
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+            }
+            document.body.removeChild(textArea);
+        });
+    }
+</script>
+
+</body>
+</html>

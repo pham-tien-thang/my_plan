@@ -27,8 +27,40 @@
     <div class="content-card">
         <div class="updating-container">
             <div class="updating-icon">🔮</div>
-            <div class="updating-text">Đang cập nhật</div>
-            <div class="updating-subtext">Nội dung prompt cho Tarot App đang được hoàn thiện...</div>
+            <div class="updating-text">Copy json sau và <strong>đính kèm 1 ảnh mẫu</strong> ném vào các AI tạo ảnh là xong</div>
+            <div class="json-wrapper">
+                <button class="copy-button" onclick="copyJson()" title="Copy JSON">
+                    <span class="copy-icon">📋</span>
+                    <span class="copy-text">Copy JSON</span>
+                </button>
+                <div class="copy-success" id="copySuccess">✓ Đã copy!</div>
+                <pre class="json-display"><code id="jsonCode">{
+  "goal": "create a new image inspired by the reference image without copying it",
+  "prompt": {
+    "core_scene": "describe the general context of the original image in a generic way",
+    "required_difference": "change some key elements such as colors, layout, characters, or props",
+    "visual_style": "maintain the overall style: 3D/2D, photorealistic, minimal, cartoon, etc.",
+    "composition_changes": [
+      "rearrange the positions of small objects",
+      "change size proportions"
+    ],
+    "detail_modifications": [
+      "change materials",
+      "slightly adjust lighting",
+      "slightly change patterns/textures",
+      "slightly modify shapes"
+    ]
+  },
+  "output_requirements": {
+    "copyright_safe": true,
+    "uniqueness_level": "medium",
+    "format": "PNG or JPG",
+    "resolution": "high",
+    "preserve_original_text": true,
+    "text_handling_rule": "any text, symbols, or numbers appearing in the original image must be preserved exactly in the new image"
+  }
+}</code></pre>
+            </div>
             <a href="../ai-prompt.html" class="back-button">← Quay lại</a>
         </div>
     </div>
@@ -41,6 +73,65 @@
         <p>© 2026 All Rights Reserved | Purr-fectly Crafted</p>
     </div>
 </footer>
+
+<script>
+const jsonContent = `{
+  "goal": "create a new image inspired by the reference image without copying it",
+  "prompt": {
+    "core_scene": "describe the general context of the original image in a generic way",
+    "required_difference": "change some key elements such as colors, layout, characters, or props",
+    "visual_style": "maintain the overall style: 3D/2D, photorealistic, minimal, cartoon, etc.",
+    "composition_changes": [
+      "rearrange the positions of small objects",
+      "change size proportions"
+    ],
+    "detail_modifications": [
+      "change materials",
+      "slightly adjust lighting",
+      "slightly change patterns/textures",
+      "slightly modify shapes"
+    ]
+  },
+  "output_requirements": {
+    "copyright_safe": true,
+    "uniqueness_level": "medium",
+    "format": "PNG or JPG",
+    "resolution": "high",
+    "preserve_original_text": true,
+    "text_handling_rule": "any text, symbols, or numbers appearing in the original image must be preserved exactly in the new image"
+  }
+}`;
+
+function copyJson() {
+    navigator.clipboard.writeText(jsonContent).then(function() {
+        const successMsg = document.getElementById('copySuccess');
+        successMsg.style.display = 'block';
+        setTimeout(function() {
+            successMsg.style.display = 'none';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = jsonContent;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            const successMsg = document.getElementById('copySuccess');
+            successMsg.style.display = 'block';
+            setTimeout(function() {
+                successMsg.style.display = 'none';
+            }, 2000);
+        } catch (err) {
+            console.error('Fallback copy failed: ', err);
+        }
+        document.body.removeChild(textArea);
+    });
+}
+</script>
 
 </body>
 </html>
