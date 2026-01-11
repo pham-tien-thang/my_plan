@@ -66,9 +66,14 @@
     </div>
 
     <div class="content-card">
-        <h2>Nói đạo lý khi user chờ loading</h2>
+        <h2>Data nói đạo lý khi user chờ loading</h2>
         <div class="code-wrapper">
-            <pre class="code-display"><code>
+            <button class="copy-button" onclick="copyDaoLy()" title="Copy Đạo Lý">
+                <span class="copy-icon">📋</span>
+                <span class="copy-text">Copy Đạo Lý</span>
+            </button>
+            <div class="copy-success" id="copyDaoLySuccess">✓ Đã copy!</div>
+            <pre class="code-display"><code id="daoLyCode">
                 // Đạo lý chung
                 final List&lt;String&gt; tarotLoadingMessages = [
   \"Vũ trụ cần thời gian để cảm thụ năng lượng của bạn...\",
@@ -299,6 +304,57 @@ function copyJson() {
         }
         document.body.removeChild(textArea);
     });
+}
+
+function copyDaoLy() {
+    const codeElement = document.getElementById('daoLyCode');
+    if (!codeElement) return;
+    
+    // Get text content and decode HTML entities
+    let text = codeElement.textContent || codeElement.innerText;
+    
+    // Create a temporary textarea to handle the copy
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function() {
+                const successMsg = document.getElementById('copyDaoLySuccess');
+                successMsg.style.display = 'block';
+                setTimeout(function() {
+                    successMsg.style.display = 'none';
+                }, 2000);
+                document.body.removeChild(textArea);
+            }).catch(function(err) {
+                console.error('Failed to copy: ', err);
+                // Fallback
+                document.execCommand('copy');
+                const successMsg = document.getElementById('copyDaoLySuccess');
+                successMsg.style.display = 'block';
+                setTimeout(function() {
+                    successMsg.style.display = 'none';
+                }, 2000);
+                document.body.removeChild(textArea);
+            });
+        } else {
+            // Fallback for older browsers
+            document.execCommand('copy');
+            const successMsg = document.getElementById('copyDaoLySuccess');
+            successMsg.style.display = 'block';
+            setTimeout(function() {
+                successMsg.style.display = 'none';
+            }, 2000);
+            document.body.removeChild(textArea);
+        }
+    } catch (err) {
+        console.error('Copy failed: ', err);
+        document.body.removeChild(textArea);
+    }
 }
 </script>
 
