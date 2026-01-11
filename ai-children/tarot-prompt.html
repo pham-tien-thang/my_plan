@@ -64,6 +64,173 @@
             <a href="../ai-prompt.html" class="back-button">← Quay lại</a>
         </div>
     </div>
+
+    <div class="content-card">
+        <h2>Nói đạo lý khi user chờ loading</h2>
+        <div class="code-wrapper">
+            <pre class="code-display"><code>final List&lt;String&gt; tarotLoadingMessages = [
+  \"Vũ trụ cần thời gian để cảm thụ năng lượng của bạn...\",
+  \"Năng lượng hiện diện rõ nhất khi bạn đang yên tĩnh một mình...\",
+  \"Kết quả tarot chỉ phản ánh năng lượng của bạn trong một khoảng thời gian...\",
+  \"Càng suy ngẫm về vấn đề năng lượng của bạn càng rung động rõ rệt...\",
+  \"78 lá tarot là 78 tấm gương 2 mặt phản chiếu...\",
+  \"Deviant Moon thường phản ánh những góc khuất và thử thách nhiều hơn...\",
+  \"Bạn hoàn toàn có thể thay đổi vận mệnh...\",
+  \"Tarot không phải trò chơi, tarot giúp bạn kết nối với chính năng lượng của mình...\",
+  \"Năng lượng càng rõ rệt, thông điệp càng rõ ràng...\",
+  \"Mỗi khoảnh khắc trôi qua đều ảnh hưởng đến trải bài...\",
+  \"Việc bạn tìm đến tarot đã là một bước lắng nghe bản thân...\",
+  \"Điều tốt đẹp đôi khi đến theo cách rất yên lặng...\",
+  \"Có nhiều hơn một con đường dành cho bạn lúc này...\",
+  \"Hãy cho phép bản thân hít thở chậm lại một chút...\",
+  \"Không cần vội vàng, thông điệp sẽ đến đúng lúc...\",
+  \"Bạn không cần phải hiểu mọi thứ ngay bây giờ...\",
+  \"Hãy để tâm trí lắng lại trước khi đón nhận câu trả lời...\",
+  \"Câu trả lời thường đến khi bạn sẵn sàng lắng nghe...\",
+  \"Không phải mọi thông điệp đều dễ chịu, nhưng đều cần thiết...\",
+  \"Tarot phản chiếu rõ trạng thái bên trong nhiều hơn bạn nghĩ...\",
+  \"Lá bài không ép buộc, chúng gợi mở khả năng...\",
+  \"Tarot không thay bạn quyết định, chỉ giúp bạn nhìn rõ hơn...\",
+  \"Sự rõ ràng bắt đầu từ việc chấp nhận cảm xúc hiện tại...\",
+  \"Bạn nên ở đúng nơi trong khoảnh khắc này...\",
+  \"Không có trải nghiệm nào là vô nghĩa trên hành trình của bạn...\",
+  \"Sự bình yên không đến từ câu trả lời, mà từ sự thấu hiểu...\",
+  \"Những gì đang diễn ra đều có lý do của riêng nó...\",
+  \"Bạn đã biết cách đối xử dịu dàng hơn với chính mình?...\",
+  \"Con đường đúng đắn không phải lúc nào cũng bằng phẳng...\",
+  \"Mọi kết thúc đều mở ra một khởi đầu khác...\",
+  \"Bạn không mắc kẹt, bạn chỉ đang trong quá trình chuyển hoá...\",
+  \"Đôi khi cần đối diện với bóng tối để nhìn rõ ánh sáng...\",
+  \"Ánh sáng thường được nhận ra rõ nhất trong bóng tối...\",
+  \"Những thứ bạn né tránh cũng mang theo thông điệp...\",
+  \"Không phải mọi sự thật đều êm ái, nhưng đều giúp bạn trưởng thành...\",
+  \"Bóng tối không phải kẻ thù, nó là một phần của bạn...\",
+  \"Thông điệp đang dần hình thành theo nhịp riêng của nó...\",
+  \"Khoảnh khắc này sự hiện diện của bạn không phải ngẫu nhiên...\",
+  \"Sự mơ hồ đôi khi là dấu hiệu của một khả năng mới...\",
+  \"Những thay đổi tinh tế thường khó nhận ra lúc ban đầu...\",
+  \"Có những câu trả lời đến từ việc chấp nhận chưa biết...\",
+  \"Những gì đang chậm lại có thể đang bảo vệ bạn...\",
+  \"Bạn đang học cách tin tưởng chính mình nhiều hơn...\",
+  \"Có những phần trong bạn đang chờ được thừa nhận...\",
+  \"Những điều chưa rõ ràng vẫn đang âm thầm vận hành...\",
+  \"Cảm giác hiện tại của bạn là có lý do...\",
+  \"Mọi cảm xúc bạn đang mang đều xứng đáng được tôn trọng...\",
+  \"Những điều bạn làm ngay bây giờ đều đang mang một ý nghĩa...\",
+  \"Có những khoảnh khắc dịu dàng đang chờ bạn phía trước...\",
+  \"Bạn không hề đơn độc trong cảm giác này...\",
+  \"Mỗi ngày trôi qua, bạn đang hiểu mình hơn một chút...\",
+  \"Bạn có quyền hy vọng theo cách của riêng mình...\",
+  \"Chỉ cần bạn còn bước, thông điệp tốt đẹp còn chờ...\",
+];
+
+final List&lt;String&gt; tarotLoadingMessagesLove = [
+  \"Có điều gì đó đang được bạn nhận ra, ngay cả khi chưa gọi tên được...\",
+  \"Một kết nối nào đó đang được thử thách qua thời gian và sự kiên nhẫn...\",
+  \"Có những sự thật chỉ lộ diện khi bạn ngừng kiểm soát...\",
+  \"Trái tim cũng có những chu kỳ riêng cần được tôn trọng...\",
+  \"Điều bạn tìm kiếm từ người ấy có thể đang được phản chiếu từ bên trong...\",
+  \"Một lá bài lật ngược không phải là kết thúc, mà là lời nhắc nhìn lại...\",
+  \"Sự im lặng đôi khi không nói lên khoảng cách...\",
+  \"Có những mối quan hệ tồn tại để dạy bạn điều cần học...\",
+  \"Có những mối quan hệ giúp bạn hiểu rõ bản thân hơn...\",
+  \"Cảm xúc đang di chuyển theo một nhịp chưa vội vàng...\",
+  \"Lá bài của sự gắn kết luôn cần cả hai phía cùng hiện diện...\",
+  \"Những thứ thật sự dành cho bạn sẽ không cần bạn phải đánh đổi điều gì...\",
+  \"Bạn không cần phải hy sinh chính mình để giữ một ai đó...\",
+  \"Tình yêu là hành trình, không phải phép thử đúng sai...\",
+  \"Có lẽ điều bạn cần lúc này là sự an toàn trong cảm xúc...\",
+  \"Không phải mọi nỗ lực đều được ghi nhận ngay lập tức...\",
+  \"Có những cơ hội chỉ đến sau khi bạn đủ sẵn sàng...\",
+  \"Bạn đang đứng ở điểm giao giữa lựa chọn và niềm tin...\",
+  \"Sự trưởng thành thường diễn ra trong những khoảng lặng...\",
+  \"Tôn trọng và bảo vệ bản thân không phải là ích kỷ...\",
+  \"Sự cân bằng không đến từ ép buộc, mà từ thấu hiểu...\",
+  \"Không phải mọi mối quan hệ đều đến để ở lại, một số đến để đánh thức...\",
+  \"Khoảng cách đôi khi không phải là rạn nứt, mà là sự thay đổi tần số...\",
+  \"Một số thông điệp nên được cảm nhận hơn là diễn giải...\",
+];
+
+final List&lt;String&gt; tarotLoadingMessagesCareer = [
+  \"Có những cơ hội chỉ đến sau khi bạn đủ sẵn sàng...\",
+  \"Không phải mọi bước tiến đều được nhìn thấy ngay lập tức...\",
+  \"Có những sự thật chỉ lộ diện khi bạn ngừng kiểm soát...\",
+  \"Con đường bạn chọn đang dạy bạn nhiều hơn bạn nghĩ...\",
+  \"Không phải mọi bước đi đều cần phải hoàn hảo...\",
+  \"Sự nghiệp là một hành trình dài, không phải cuộc đua ngắn...\",
+  \"Những gì bạn đang làm hôm nay vẫn có giá trị lâu dài...\",
+  \"Con đường bạn đang đi chưa bộc lộ toàn bộ hình dạng của nó...\",
+  \"Một chu kỳ cũ đang dần khép lại để nhường chỗ cho điều khác...\",
+  \"Lá bài hiện tại nói nhiều hơn về quá trình hơn là kết quả...\",
+  \"Có những thử thách xuất hiện để kiểm tra sự vững vàng của bạn...\",
+  \"Bạn đang đứng ở điểm giao giữa lựa chọn và niềm tin...\",
+  \"Sự trưởng thành thường diễn ra trong những khoảng lặng...\",
+];
+
+final List&lt;String&gt; tarotLoadingMessagesHealth = [
+  \"Cơ thể bạn đang cố gắng giao tiếp với bạn theo cách riêng...\",
+  \"Không sao nếu bạn cần nghỉ ngơi nhiều hơn bình thường...\",
+  \"Lắng nghe cơ thể cũng là một dạng quan tâm sâu sắc...\",
+  \"Bạn không cần phải mạnh mẽ khi cơ thể đang mệt mỏi...\",
+  \"Sự hồi phục bắt đầu từ việc cho phép bản thân chậm lại...\",
+  \"Cơ thể và tâm trí của bạn cần được đối xử dịu dàng...\",
+  \"Bạn xứng đáng với cảm giác cân bằng và nhẹ nhõm hơn...\",
+  \"Việc bạn quan tâm đến sức khoẻ đã là một bước tích cực...\",
+  \"Sự cân bằng không đến từ ép buộc, mà từ thấu hiểu...\",
+  \"Năng lượng được nuôi dưỡng qua những điều nhỏ và đều đặn...\",
+  \"Sự mệt mỏi đôi khi là tín hiệu cần được lắng nghe...\",
+  \"Nhịp điệu tự nhiên không phải lúc nào cũng trùng với mong muốn...\",
+];
+
+final List&lt;String&gt; tarotLoadingMessagesFamily = [
+  \"Tarot đang phản chiếu mối liên kết vô hình giữa bạn và những người thân yêu...\",
+  \"Các lá bài đang chạm tới ký ức, thói quen và cảm xúc được truyền qua nhiều thế hệ...\",
+  \"Gia đình không chỉ là nơi bạn đến từ, mà còn là nơi năng lượng bạn mang theo...\",
+  \"Một số thông điệp gia đình cần được thấu hiểu, không cần phải giải quyết ngay...\",
+  \"Trải bài này đang kết nối bạn với dòng chảy cảm xúc chung của gia đình...\",
+];
+
+final List&lt;String&gt; tarotLoadingMessagesMoney = [
+  \"Sự ổn định vật chất thường bắt đầu từ nhận thức, không phải hành động vội vàng...\",
+  \"Thành quả hiện tại đang mang theo bài học về giá trị và sự trao đổi...\",
+  \"Không phải mọi sự chậm trễ đều là thiếu thốn, đôi khi là điều chỉnh...\",
+  \"Những quyết định sắp tới đang chịu ảnh hưởng từ niềm tin sâu bên trong...\",
+];
+
+final List&lt;String&gt; tarotLoadingMessagesFriend = [
+  \"Không phải mọi mối quan hệ đều đến để ở lại, một số đến để đánh thức...\",
+  \"Khoảng cách đôi khi không phải là rạn nứt, mà là sự thay đổi tần số...\",
+  \"Một số thông điệp nên được cảm nhận hơn là diễn giải...\",
+  \"Những cuộc gặp gỡ tưởng chừng ngẫu nhiên thường mang theo ý nghĩa dài hạn...\",
+  \"Không phải ai bước cùng bạn cũng đi chung một chặng đường...\",
+];
+
+final List&lt;String&gt; tarotLoadingMessagesSubconscious = [
+  \"Ý thức không mở ra bằng câu trả lời, mà bằng sự quan sát lặng lẽ...\",
+  \"Khi ý thức thay đổi, cách bạn nhìn thông điệp cũng thay đổi theo...\",
+  \"Ý thức càng mở rộng, thông điệp càng ít mang tính tuyệt đối...\",
+  \"Tarot đang soi chiếu khoảng cách giữa suy nghĩ và nhận thức...\",
+  \"Trải bài này đang mở ra khoảng lặng giữa câu hỏi và sự nhận ra...\",
+  \"Có điều gì đó đang được bạn nhận ra, ngay cả khi chưa gọi tên được...\",
+];
+
+final List&lt;String&gt; tarotLoadingMessagesCurrentPower = [
+  \"Không phải lúc nào sức mạnh cũng ồn ào, đôi khi nó rất lặng lẽ...\",
+  \"Cần cố gắng trở nên mạnh hơn, hay ý thức về những điều đang có ?...\",
+  \"Sức mạnh không hẳn nằm ở kết quả, mà ở trạng thái bạn đang đứng...\",
+  \"Có một nguồn lực bên trong đang chờ được bạn nhận ra...\",
+  \"Sức mạnh của bạn lúc này phù hợp với giai đoạn bạn đang đi qua...\",
+];
+
+final List&lt;String&gt; tarotLoadingMessagesDream = [
+  \"Tarot đang chạm tới những hình ảnh xuất hiện khi lý trí lùi lại...\",
+  \"Giấc mơ không nói bằng lời, chúng nói bằng biểu tượng...\",
+  \"Các lá bài đang phản chiếu điều vô thức đang cố gắng được nhìn thấy...\",
+  \"Những hình ảnh mờ ảo đang mang theo ý nghĩa vượt ngoài logic...\",
+  \"Giấc mơ thường hé lộ điều ban ngày bị che khuất...\",
+];</code></pre>
+        </div>
+    </div>
 </main>
 
 <footer>
