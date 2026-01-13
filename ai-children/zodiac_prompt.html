@@ -83,6 +83,395 @@
             <a href="../ai-prompt.html" class="back-button">← Quay lại</a>
         </div>
     </div>
+
+    <div class="content-card">
+        <h2>Zodiac Compatibility Prompts</h2>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="switchTab('love')" data-tab="love">💘 Tình yêu</button>
+                <button class="tab-button" onclick="switchTab('friendship')" data-tab="friendship">🤝 Tình bạn</button>
+                <button class="tab-button" onclick="switchTab('colleague')" data-tab="colleague">🏢 Đồng nghiệp</button>
+                <button class="tab-button" onclick="switchTab('contrast')" data-tab="contrast">🧩 Sự tương phản</button>
+            </div>
+            
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab-love">
+                    <div class="json-wrapper">
+                        <button class="copy-button" onclick="copyActiveTab()" title="Copy Prompt">
+                            <span class="copy-icon">📋</span>
+                            <span class="copy-text">Copy Prompt</span>
+                        </button>
+                        <div class="copy-success" id="copySuccess">✓ Đã copy!</div>
+                        <pre class="json-display"><code id="zodiacLoveCode">{
+  "language": "vi",
+  "topic": "zodiac_love_compatibility",
+  "pair": {
+    "male": "Nhân Mã",
+    "female": "Nhân Mã"
+  },
+  "icon_rules": {
+    "use_icons": true,
+    "icon_style": "biểu cảm, dễ hiểu, phổ biến trên mobile",
+    "placement": "đặt icon ở đầu tiêu đề mỗi mục",
+    "avoid": [
+      "emoji quá trẻ con",
+      "emoji không liên quan nội dung",
+      "lặp lại cùng một emoji quá nhiều"
+    ]
+  },
+  "section_icons": {
+    "title": "💘",
+    "Tổng quan": "🌱",
+    "Nam trong tình yêu": "👨‍🚀",
+    "Nữ trong tình yêu": "👩‍🌙",
+    "Điểm thu hút": "✨",
+    "Thử thách": "⚠️",
+    "Bí quyết bền lâu": "🗝️",
+    "Đánh giá hòa hợp": "⭐"
+  },
+  "tone": {
+    "style": "tinh tế, trung tính, giàu cảm xúc",
+    "avoid": [
+      "sao chép văn mẫu phổ biến",
+      "câu chữ sáo rỗng",
+      "khẳng định tuyệt đối"
+    ]
+  },
+  "structure": [
+    {
+      "section": "Tổng quan",
+      "instruction": "Viết 3–4 câu mô tả bản chất mối quan hệ, mở đầu bằng icon đã chỉ định."
+    },
+    {
+      "section": "Nam trong tình yêu",
+      "instruction": "Mô tả cách yêu, nhu cầu cảm xúc và điểm yếu của cung nam; mở đầu bằng icon phù hợp."
+    },
+    {
+      "section": "Nữ trong tình yêu",
+      "instruction": "Tập trung vào chiều sâu cảm xúc và phản ứng khi bất an; mở đầu bằng icon phù hợp."
+    },
+    {
+      "section": "Điểm thu hút",
+      "instruction": "Nêu lý do hai người dễ bị hấp dẫn bởi nhau, dùng icon tạo cảm giác tích cực."
+    },
+    {
+      "section": "Thử thách",
+      "instruction": "Phân tích mâu thuẫn tiềm ẩn, giọng trung tính, không phán xét."
+    },
+    {
+      "section": "Bí quyết bền lâu",
+      "instruction": "Đưa lời khuyên cân bằng cho cả hai, tập trung vào giao tiếp."
+    },
+    {
+      "section": "Đánh giá hòa hợp",
+      "instruction": "Chấm sao (1–5) cho: hấp dẫn ban đầu, lâu dài, cảm xúc."
+    }
+  ],
+  "output_rules": {
+    "icon_required": true,
+    "icons_consistent": true,
+    "original_expression": true,
+    "suitable_for_app": true,
+    "length": "medium"
+  }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="tab-pane" id="tab-friendship">
+                    <div class="json-wrapper">
+                        <button class="copy-button" onclick="copyActiveTab()" title="Copy Prompt">
+                            <span class="copy-icon">📋</span>
+                            <span class="copy-text">Copy Prompt</span>
+                        </button>
+                        <div class="copy-success" id="copySuccess">✓ Đã copy!</div>
+                        <pre class="json-display"><code id="zodiacFriendshipCode">{
+  "language": "vi",
+  "topic": "zodiac_social_compatibility",
+  "context": "friendship | colleague",
+  "pair": {
+    "person_a": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    },
+    "person_b": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    }
+  },
+  "icon_rules": {
+    "use_icons": true,
+    "icon_style": "biểu cảm, dễ hiểu, phổ biến trên mobile",
+    "placement": "đặt icon ở đầu tiêu đề mỗi mục",
+    "avoid": [
+      "emoji quá trẻ con",
+      "emoji không liên quan nội dung",
+      "lặp lại cùng một emoji quá nhiều"
+    ]
+  },
+  "section_icons": {
+    "title": "🤝",
+    "Tổng quan": "🌈",
+    "Người thứ nhất": "🧑",
+    "Người thứ 2": "🧑",
+    "Tương tác Người thứ nhất ↔ Người thứ 2": "🔄",
+    "Điểm mạnh chung": "✨",
+    "Điểm dễ xung đột": "⚠️",
+    "Bí quyết duy trì": "🗝️",
+    "Đánh giá hòa hợp": "⭐"
+  },
+  "tone": {
+    "style": "tinh tế, trung tính, theo ngữ cảnh",
+    "avoid": [
+      "văn mẫu sáo rỗng",
+      "đánh giá thiên lệch giới",
+      "khẳng định tuyệt đối"
+    ]
+  },
+  "structure": [
+    {
+      "section": "Tổng quan",
+      "instruction": "Viết 3–4 câu mô tả mối quan hệ trong ngữ cảnh đã chọn (tình bạn hoặc đồng nghiệp)."
+    },
+    {
+      "section": "Người thứ nhất",
+      "instruction": "Mô tả hành vi, cách kết nối và điểm nhạy cảm của Người thứ nhất, có xét đến giới tính."
+    },
+    {
+      "section": "Người thứ 2",
+      "instruction": "Mô tả hành vi, cách kết nối và điểm nhạy cảm của Người thứ 2, có xét đến giới tính."
+    },
+    {
+      "section": "Tương tác Người thứ nhất ↔ Người thứ 2",
+      "instruction": "Phân tích cách hai người ảnh hưởng lẫn nhau, đặc biệt khi cùng giới hoặc khác giới."
+    },
+    {
+      "section": "Điểm mạnh chung",
+      "instruction": "Nêu những lợi thế khi họ gắn bó hoặc hợp tác."
+    },
+    {
+      "section": "Điểm dễ xung đột",
+      "instruction": "Phân tích mâu thuẫn tiềm ẩn về kỳ vọng, ranh giới hoặc nhịp độ."
+    },
+    {
+      "section": "Bí quyết duy trì",
+      "instruction": "Đưa lời khuyên thực tế để giữ mối quan hệ ổn định, phù hợp với ngữ cảnh."
+    },
+    {
+      "section": "Đánh giá hòa hợp",
+      "instruction": "Chấm sao (1–5) cho: mức độ ăn ý, độ bền, khả năng đồng hành."
+    }
+  ],
+  "output_rules": {
+    "icon_required": true,
+    "icons_consistent": true,
+    "original_expression": true,
+    "suitable_for_app": true,
+    "length": "medium"
+  }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="tab-pane" id="tab-colleague">
+                    <div class="json-wrapper">
+                        <button class="copy-button" onclick="copyActiveTab()" title="Copy Prompt">
+                            <span class="copy-icon">📋</span>
+                            <span class="copy-text">Copy Prompt</span>
+                        </button>
+                        <div class="copy-success" id="copySuccess">✓ Đã copy!</div>
+                        <pre class="json-display"><code id="zodiacColleagueCode">{
+  "language": "vi",
+  "topic": "zodiac_colleague_compatibility",
+  "context": "colleague",
+  "pair": {
+    "person_a": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    },
+    "person_b": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    }
+  },
+  "icon_rules": {
+    "use_icons": true,
+    "icon_style": "biểu cảm, dễ hiểu, phổ biến trên mobile",
+    "placement": "đặt icon ở đầu tiêu đề mỗi mục",
+    "avoid": [
+      "emoji quá trẻ con",
+      "emoji không liên quan nội dung",
+      "lặp lại cùng một emoji quá nhiều"
+    ]
+  },
+  "section_icons": {
+    "title": "🏢",
+    "Tổng quan": "📊",
+    "Người thứ nhất trong công việc": "🧑‍💼",
+    "Người thứ 2 trong công việc": "🧑‍💼",
+    "Cách phối hợp": "🤝",
+    "Thế mạnh chung": "🚀",
+    "Điểm dễ xung đột": "⚠️",
+    "Khi áp lực cao": "⏱️",
+    "Bí quyết hợp tác": "🗝️",
+    "Đánh giá hòa hợp": "⭐"
+  },
+  "tone": {
+    "style": "trung tính, thực tế, chuyên nghiệp",
+    "avoid": [
+      "đánh giá cảm tính",
+      "văn sáo rỗng",
+      "khẳng định tuyệt đối"
+    ]
+  },
+  "structure": [
+    {
+      "section": "Tổng quan",
+      "instruction": "Viết 3–4 câu mô tả bức tranh chung khi hai người làm đồng nghiệp, xét theo giới tính của từng người."
+    },
+    {
+      "section": "Người thứ nhất trong công việc",
+      "instruction": "Mô tả phong cách làm việc, cách giao tiếp và điểm dễ mất cân bằng của Người thứ nhất."
+    },
+    {
+      "section": "Người thứ 2 trong công việc",
+      "instruction": "Mô tả phong cách làm việc, cách xử lý trách nhiệm và phản ứng khi thiếu rõ ràng của Người thứ 2."
+    },
+    {
+      "section": "Cách phối hợp",
+      "instruction": "Phân tích cách hai người phối hợp khi cùng giới hoặc khác giới."
+    },
+    {
+      "section": "Thế mạnh chung",
+      "instruction": "Nêu những yếu tố giúp hiệu suất và tinh thần làm việc tăng cao."
+    },
+    {
+      "section": "Điểm dễ xung đột",
+      "instruction": "Phân tích mâu thuẫn tiềm ẩn về nhịp độ, quyền chủ động hoặc kỷ luật."
+    },
+    {
+      "section": "Khi áp lực cao",
+      "instruction": "Mô tả phản ứng của từng người khi deadline gấp hoặc workload nặng."
+    },
+    {
+      "section": "Bí quyết hợp tác",
+      "instruction": "Đưa lời khuyên thực tế để duy trì hợp tác lâu dài, tập trung vào ranh giới và giao tiếp rõ ràng."
+    },
+    {
+      "section": "Đánh giá hòa hợp",
+      "instruction": "Chấm sao (1–5) cho: phối hợp công việc, hiệu suất chung, độ ổn định."
+    }
+  ],
+  "output_rules": {
+    "icon_required": true,
+    "icons_consistent": true,
+    "original_expression": true,
+    "suitable_for_app": true,
+    "length": "medium"
+  }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="tab-pane" id="tab-contrast">
+                    <div class="json-wrapper">
+                        <button class="copy-button" onclick="copyActiveTab()" title="Copy Prompt">
+                            <span class="copy-icon">📋</span>
+                            <span class="copy-text">Copy Prompt</span>
+                        </button>
+                        <div class="copy-success" id="copySuccess">✓ Đã copy!</div>
+                        <pre class="json-display"><code id="zodiacContrastCode">{
+  "language": "vi",
+  "topic": "zodiac_social_compatibility",
+  "context": "general_life",
+  "pair": {
+    "person_a": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    },
+    "person_b": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    }
+  },
+  "icon_rules": {
+    "use_icons": true,
+    "icon_style": "biểu cảm, dễ hiểu, phổ biến trên mobile",
+    "placement": "đặt icon ở đầu tiêu đề mỗi mục",
+    "avoid": [
+      "emoji quá trẻ con",
+      "emoji không liên quan nội dung",
+      "lặp lại cùng một emoji quá nhiều"
+    ]
+  },
+  "section_icons": {
+    "title": "🧩",
+    "Tổng quan": "🌍",
+    "Người thứ nhất": "🧑",
+    "Người thứ 2": "🧑",
+    "Tương tác trong cuộc sống": "🔄",
+    "Sự đối lập giữa các cung": "🌓",
+    "Điểm mạnh khi đồng hành": "✨",
+    "Điểm dễ xung đột": "⚠️",
+    "Cách cân bằng lâu dài": "🗝️",
+    "Đánh giá hòa hợp": "⭐"
+  },
+  "tone": {
+    "style": "tinh tế, trung tính, bao quát đời sống",
+    "avoid": [
+      "đánh giá phiến diện theo bối cảnh",
+      "văn sáo rỗng",
+      "khẳng định tuyệt đối"
+    ]
+  },
+  "structure": [
+    {
+      "section": "Tổng quan",
+      "instruction": "Viết 3–4 câu khái quát mối quan hệ giữa hai người trong nhiều khía cạnh: tính cách, cuộc sống, công việc và bạn bè."
+    },
+    {
+      "section": "Người thứ nhất",
+      "instruction": "Mô tả tính cách, cách ứng xử trong cuộc sống và các mối quan hệ của Người thứ nhất, có xét đến giới tính."
+    },
+    {
+      "section": "Người thứ 2",
+      "instruction": "Mô tả tính cách, cách ứng xử trong cuộc sống và các mối quan hệ của Người thứ 2, có xét đến giới tính."
+    },
+    {
+      "section": "Tương tác trong cuộc sống",
+      "instruction": "Phân tích cách hai người ảnh hưởng lẫn nhau trong đời sống thường ngày, tình bạn và môi trường làm việc."
+    },
+    {
+      "section": "Sự đối lập giữa các cung",
+      "instruction": "Phân tích những khác biệt cốt lõi về tư duy, nhịp sống và giá trị cá nhân; nhấn mạnh cách sự đối lập này tạo ra cả thách thức lẫn sự bổ trợ."
+    },
+    {
+      "section": "Điểm mạnh khi đồng hành",
+      "instruction": "Nêu những lợi thế nổi bật khi hai người gắn bó lâu dài trong nhiều vai trò khác nhau."
+    },
+    {
+      "section": "Điểm dễ xung đột",
+      "instruction": "Phân tích các tình huống dễ phát sinh mâu thuẫn trong đời sống, công việc hoặc quan hệ xã hội."
+    },
+    {
+      "section": "Cách cân bằng lâu dài",
+      "instruction": "Đưa lời khuyên giúp hai người duy trì sự hài hòa, tôn trọng khác biệt và phát triển cùng nhau."
+    },
+    {
+      "section": "Đánh giá hòa hợp",
+      "instruction": "Chấm sao (1–5) cho: mức độ đồng điệu, khả năng thích nghi, tiềm năng gắn bó lâu dài."
+    }
+  ],
+  "output_rules": {
+    "icon_required": true,
+    "icons_consistent": true,
+    "original_expression": true,
+    "suitable_for_app": true,
+    "length": "medium"
+  }
+}</code></pre>
+        </div>
+    </div>
 </main>
 
 <footer>
@@ -150,7 +539,551 @@
             document.body.removeChild(textArea);
         });
     }
+
+    const zodiacLoveContent = `{
+  "language": "vi",
+  "topic": "zodiac_love_compatibility",
+  "pair": {
+    "male": "Nhân Mã",
+    "female": "Nhân Mã"
+  },
+  "icon_rules": {
+    "use_icons": true,
+    "icon_style": "biểu cảm, dễ hiểu, phổ biến trên mobile",
+    "placement": "đặt icon ở đầu tiêu đề mỗi mục",
+    "avoid": [
+      "emoji quá trẻ con",
+      "emoji không liên quan nội dung",
+      "lặp lại cùng một emoji quá nhiều"
+    ]
+  },
+  "section_icons": {
+    "title": "💘",
+    "Tổng quan": "🌱",
+    "Nam trong tình yêu": "👨‍🚀",
+    "Nữ trong tình yêu": "👩‍🌙",
+    "Điểm thu hút": "✨",
+    "Thử thách": "⚠️",
+    "Bí quyết bền lâu": "🗝️",
+    "Đánh giá hòa hợp": "⭐"
+  },
+  "tone": {
+    "style": "tinh tế, trung tính, giàu cảm xúc",
+    "avoid": [
+      "sao chép văn mẫu phổ biến",
+      "câu chữ sáo rỗng",
+      "khẳng định tuyệt đối"
+    ]
+  },
+  "structure": [
+    {
+      "section": "Tổng quan",
+      "instruction": "Viết 3–4 câu mô tả bản chất mối quan hệ, mở đầu bằng icon đã chỉ định."
+    },
+    {
+      "section": "Nam trong tình yêu",
+      "instruction": "Mô tả cách yêu, nhu cầu cảm xúc và điểm yếu của cung nam; mở đầu bằng icon phù hợp."
+    },
+    {
+      "section": "Nữ trong tình yêu",
+      "instruction": "Tập trung vào chiều sâu cảm xúc và phản ứng khi bất an; mở đầu bằng icon phù hợp."
+    },
+    {
+      "section": "Điểm thu hút",
+      "instruction": "Nêu lý do hai người dễ bị hấp dẫn bởi nhau, dùng icon tạo cảm giác tích cực."
+    },
+    {
+      "section": "Thử thách",
+      "instruction": "Phân tích mâu thuẫn tiềm ẩn, giọng trung tính, không phán xét."
+    },
+    {
+      "section": "Bí quyết bền lâu",
+      "instruction": "Đưa lời khuyên cân bằng cho cả hai, tập trung vào giao tiếp."
+    },
+    {
+      "section": "Đánh giá hòa hợp",
+      "instruction": "Chấm sao (1–5) cho: hấp dẫn ban đầu, lâu dài, cảm xúc."
+    }
+  ],
+  "output_rules": {
+    "icon_required": true,
+    "icons_consistent": true,
+    "original_expression": true,
+    "suitable_for_app": true,
+    "length": "medium"
+  }
+}`;
+
+    function copyZodiacLove() {
+        navigator.clipboard.writeText(zodiacLoveContent).then(function() {
+            const successMsg = document.getElementById('copyZodiacLoveSuccess');
+            successMsg.style.display = 'block';
+            setTimeout(function() {
+                successMsg.style.display = 'none';
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = zodiacLoveContent;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                const successMsg = document.getElementById('copyZodiacLoveSuccess');
+                successMsg.style.display = 'block';
+                setTimeout(function() {
+                    successMsg.style.display = 'none';
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+            }
+            document.body.removeChild(textArea);
+        });
+    }
+
+    const zodiacFriendshipContent = `{
+  "language": "vi",
+  "topic": "zodiac_social_compatibility",
+  "context": "friendship | colleague",
+  "pair": {
+    "person_a": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    },
+    "person_b": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    }
+  },
+  "icon_rules": {
+    "use_icons": true,
+    "icon_style": "biểu cảm, dễ hiểu, phổ biến trên mobile",
+    "placement": "đặt icon ở đầu tiêu đề mỗi mục",
+    "avoid": [
+      "emoji quá trẻ con",
+      "emoji không liên quan nội dung",
+      "lặp lại cùng một emoji quá nhiều"
+    ]
+  },
+  "section_icons": {
+    "title": "🤝",
+    "Tổng quan": "🌈",
+    "Người thứ nhất": "🧑",
+    "Người thứ 2": "🧑",
+    "Tương tác Người thứ nhất ↔ Người thứ 2": "🔄",
+    "Điểm mạnh chung": "✨",
+    "Điểm dễ xung đột": "⚠️",
+    "Bí quyết duy trì": "🗝️",
+    "Đánh giá hòa hợp": "⭐"
+  },
+  "tone": {
+    "style": "tinh tế, trung tính, theo ngữ cảnh",
+    "avoid": [
+      "văn mẫu sáo rỗng",
+      "đánh giá thiên lệch giới",
+      "khẳng định tuyệt đối"
+    ]
+  },
+  "structure": [
+    {
+      "section": "Tổng quan",
+      "instruction": "Viết 3–4 câu mô tả mối quan hệ trong ngữ cảnh đã chọn (tình bạn hoặc đồng nghiệp)."
+    },
+    {
+      "section": "Người thứ nhất",
+      "instruction": "Mô tả hành vi, cách kết nối và điểm nhạy cảm của Người thứ nhất, có xét đến giới tính."
+    },
+    {
+      "section": "Người thứ 2",
+      "instruction": "Mô tả hành vi, cách kết nối và điểm nhạy cảm của Người thứ 2, có xét đến giới tính."
+    },
+    {
+      "section": "Tương tác Người thứ nhất ↔ Người thứ 2",
+      "instruction": "Phân tích cách hai người ảnh hưởng lẫn nhau, đặc biệt khi cùng giới hoặc khác giới."
+    },
+    {
+      "section": "Điểm mạnh chung",
+      "instruction": "Nêu những lợi thế khi họ gắn bó hoặc hợp tác."
+    },
+    {
+      "section": "Điểm dễ xung đột",
+      "instruction": "Phân tích mâu thuẫn tiềm ẩn về kỳ vọng, ranh giới hoặc nhịp độ."
+    },
+    {
+      "section": "Bí quyết duy trì",
+      "instruction": "Đưa lời khuyên thực tế để giữ mối quan hệ ổn định, phù hợp với ngữ cảnh."
+    },
+    {
+      "section": "Đánh giá hòa hợp",
+      "instruction": "Chấm sao (1–5) cho: mức độ ăn ý, độ bền, khả năng đồng hành."
+    }
+  ],
+  "output_rules": {
+    "icon_required": true,
+    "icons_consistent": true,
+    "original_expression": true,
+    "suitable_for_app": true,
+    "length": "medium"
+  }
+}`;
+
+    function copyZodiacFriendship() {
+        navigator.clipboard.writeText(zodiacFriendshipContent).then(function() {
+            const successMsg = document.getElementById('copyZodiacFriendshipSuccess');
+            successMsg.style.display = 'block';
+            setTimeout(function() {
+                successMsg.style.display = 'none';
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = zodiacFriendshipContent;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                const successMsg = document.getElementById('copyZodiacFriendshipSuccess');
+                successMsg.style.display = 'block';
+                setTimeout(function() {
+                    successMsg.style.display = 'none';
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+            }
+            document.body.removeChild(textArea);
+        });
+    }
+
+    const zodiacColleagueContent = `{
+  "language": "vi",
+  "topic": "zodiac_colleague_compatibility",
+  "context": "colleague",
+  "pair": {
+    "person_a": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    },
+    "person_b": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    }
+  },
+  "icon_rules": {
+    "use_icons": true,
+    "icon_style": "biểu cảm, dễ hiểu, phổ biến trên mobile",
+    "placement": "đặt icon ở đầu tiêu đề mỗi mục",
+    "avoid": [
+      "emoji quá trẻ con",
+      "emoji không liên quan nội dung",
+      "lặp lại cùng một emoji quá nhiều"
+    ]
+  },
+  "section_icons": {
+    "title": "🏢",
+    "Tổng quan": "📊",
+    "Người thứ nhất trong công việc": "🧑‍💼",
+    "Người thứ 2 trong công việc": "🧑‍💼",
+    "Cách phối hợp": "🤝",
+    "Thế mạnh chung": "🚀",
+    "Điểm dễ xung đột": "⚠️",
+    "Khi áp lực cao": "⏱️",
+    "Bí quyết hợp tác": "🗝️",
+    "Đánh giá hòa hợp": "⭐"
+  },
+  "tone": {
+    "style": "trung tính, thực tế, chuyên nghiệp",
+    "avoid": [
+      "đánh giá cảm tính",
+      "văn sáo rỗng",
+      "khẳng định tuyệt đối"
+    ]
+  },
+  "structure": [
+    {
+      "section": "Tổng quan",
+      "instruction": "Viết 3–4 câu mô tả bức tranh chung khi hai người làm đồng nghiệp, xét theo giới tính của từng người."
+    },
+    {
+      "section": "Người thứ nhất trong công việc",
+      "instruction": "Mô tả phong cách làm việc, cách giao tiếp và điểm dễ mất cân bằng của Người thứ nhất."
+    },
+    {
+      "section": "Người thứ 2 trong công việc",
+      "instruction": "Mô tả phong cách làm việc, cách xử lý trách nhiệm và phản ứng khi thiếu rõ ràng của Người thứ 2."
+    },
+    {
+      "section": "Cách phối hợp",
+      "instruction": "Phân tích cách hai người phối hợp khi cùng giới hoặc khác giới."
+    },
+    {
+      "section": "Thế mạnh chung",
+      "instruction": "Nêu những yếu tố giúp hiệu suất và tinh thần làm việc tăng cao."
+    },
+    {
+      "section": "Điểm dễ xung đột",
+      "instruction": "Phân tích mâu thuẫn tiềm ẩn về nhịp độ, quyền chủ động hoặc kỷ luật."
+    },
+    {
+      "section": "Khi áp lực cao",
+      "instruction": "Mô tả phản ứng của từng người khi deadline gấp hoặc workload nặng."
+    },
+    {
+      "section": "Bí quyết hợp tác",
+      "instruction": "Đưa lời khuyên thực tế để duy trì hợp tác lâu dài, tập trung vào ranh giới và giao tiếp rõ ràng."
+    },
+    {
+      "section": "Đánh giá hòa hợp",
+      "instruction": "Chấm sao (1–5) cho: phối hợp công việc, hiệu suất chung, độ ổn định."
+    }
+  ],
+  "output_rules": {
+    "icon_required": true,
+    "icons_consistent": true,
+    "original_expression": true,
+    "suitable_for_app": true,
+    "length": "medium"
+  }
+}`;
+
+    function copyZodiacColleague() {
+        navigator.clipboard.writeText(zodiacColleagueContent).then(function() {
+            const successMsg = document.getElementById('copyZodiacColleagueSuccess');
+            successMsg.style.display = 'block';
+            setTimeout(function() {
+                successMsg.style.display = 'none';
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = zodiacColleagueContent;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                const successMsg = document.getElementById('copyZodiacColleagueSuccess');
+                successMsg.style.display = 'block';
+                setTimeout(function() {
+                    successMsg.style.display = 'none';
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+            }
+            document.body.removeChild(textArea);
+        });
+    }
+
+    const zodiacContrastContent = `{
+  "language": "vi",
+  "topic": "zodiac_social_compatibility",
+  "context": "general_life",
+  "pair": {
+    "person_a": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    },
+    "person_b": {
+      "sign": "Nhân Mã",
+      "gender": "male | female"
+    }
+  },
+  "icon_rules": {
+    "use_icons": true,
+    "icon_style": "biểu cảm, dễ hiểu, phổ biến trên mobile",
+    "placement": "đặt icon ở đầu tiêu đề mỗi mục",
+    "avoid": [
+      "emoji quá trẻ con",
+      "emoji không liên quan nội dung",
+      "lặp lại cùng một emoji quá nhiều"
+    ]
+  },
+  "section_icons": {
+    "title": "🧩",
+    "Tổng quan": "🌍",
+    "Người thứ nhất": "🧑",
+    "Người thứ 2": "🧑",
+    "Tương tác trong cuộc sống": "🔄",
+    "Sự đối lập giữa các cung": "🌓",
+    "Điểm mạnh khi đồng hành": "✨",
+    "Điểm dễ xung đột": "⚠️",
+    "Cách cân bằng lâu dài": "🗝️",
+    "Đánh giá hòa hợp": "⭐"
+  },
+  "tone": {
+    "style": "tinh tế, trung tính, bao quát đời sống",
+    "avoid": [
+      "đánh giá phiến diện theo bối cảnh",
+      "văn sáo rỗng",
+      "khẳng định tuyệt đối"
+    ]
+  },
+  "structure": [
+    {
+      "section": "Tổng quan",
+      "instruction": "Viết 3–4 câu khái quát mối quan hệ giữa hai người trong nhiều khía cạnh: tính cách, cuộc sống, công việc và bạn bè."
+    },
+    {
+      "section": "Người thứ nhất",
+      "instruction": "Mô tả tính cách, cách ứng xử trong cuộc sống và các mối quan hệ của Người thứ nhất, có xét đến giới tính."
+    },
+    {
+      "section": "Người thứ 2",
+      "instruction": "Mô tả tính cách, cách ứng xử trong cuộc sống và các mối quan hệ của Người thứ 2, có xét đến giới tính."
+    },
+    {
+      "section": "Tương tác trong cuộc sống",
+      "instruction": "Phân tích cách hai người ảnh hưởng lẫn nhau trong đời sống thường ngày, tình bạn và môi trường làm việc."
+    },
+    {
+      "section": "Sự đối lập giữa các cung",
+      "instruction": "Phân tích những khác biệt cốt lõi về tư duy, nhịp sống và giá trị cá nhân; nhấn mạnh cách sự đối lập này tạo ra cả thách thức lẫn sự bổ trợ."
+    },
+    {
+      "section": "Điểm mạnh khi đồng hành",
+      "instruction": "Nêu những lợi thế nổi bật khi hai người gắn bó lâu dài trong nhiều vai trò khác nhau."
+    },
+    {
+      "section": "Điểm dễ xung đột",
+      "instruction": "Phân tích các tình huống dễ phát sinh mâu thuẫn trong đời sống, công việc hoặc quan hệ xã hội."
+    },
+    {
+      "section": "Cách cân bằng lâu dài",
+      "instruction": "Đưa lời khuyên giúp hai người duy trì sự hài hòa, tôn trọng khác biệt và phát triển cùng nhau."
+    },
+    {
+      "section": "Đánh giá hòa hợp",
+      "instruction": "Chấm sao (1–5) cho: mức độ đồng điệu, khả năng thích nghi, tiềm năng gắn bó lâu dài."
+    }
+  ],
+  "output_rules": {
+    "icon_required": true,
+    "icons_consistent": true,
+    "original_expression": true,
+    "suitable_for_app": true,
+    "length": "medium"
+  }
+}`;
+
+    function copyZodiacContrast() {
+        navigator.clipboard.writeText(zodiacContrastContent).then(function() {
+            const successMsg = document.getElementById('copyZodiacContrastSuccess');
+            successMsg.style.display = 'block';
+            setTimeout(function() {
+                successMsg.style.display = 'none';
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = zodiacContrastContent;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                const successMsg = document.getElementById('copyZodiacContrastSuccess');
+                successMsg.style.display = 'block';
+                setTimeout(function() {
+                    successMsg.style.display = 'none';
+                }, 2000);
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+            }
+            document.body.removeChild(textArea);
+        });
+    }
+
+    // Tab switching function
+    function switchTab(tabName) {
+        // Hide all tab panes
+        const allPanes = document.querySelectorAll('.tab-pane');
+        allPanes.forEach(pane => pane.classList.remove('active'));
+        
+        // Remove active class from all buttons
+        const allButtons = document.querySelectorAll('.tab-button');
+        allButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Show selected tab pane
+        const selectedPane = document.getElementById('tab-' + tabName);
+        if (selectedPane) {
+            selectedPane.classList.add('active');
+        }
+        
+        // Add active class to clicked button
+        const clickedButton = document.querySelector(`[data-tab="${tabName}"]`);
+        if (clickedButton) {
+            clickedButton.classList.add('active');
+        }
+    }
+
+    // Copy active tab content
+    function copyActiveTab() {
+        const activePane = document.querySelector('.tab-pane.active');
+        if (!activePane) return;
+        
+        const codeElement = activePane.querySelector('code');
+        if (!codeElement) return;
+        
+        let text = codeElement.textContent || codeElement.innerText;
+        
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    const successMsg = activePane.querySelector('.copy-success');
+                    if (successMsg) {
+                        successMsg.style.display = 'block';
+                        setTimeout(function() {
+                            successMsg.style.display = 'none';
+                        }, 2000);
+                    }
+                    document.body.removeChild(textArea);
+                }).catch(function(err) {
+                    console.error('Failed to copy: ', err);
+                    document.execCommand('copy');
+                    const successMsg = activePane.querySelector('.copy-success');
+                    if (successMsg) {
+                        successMsg.style.display = 'block';
+                        setTimeout(function() {
+                            successMsg.style.display = 'none';
+                        }, 2000);
+                    }
+                    document.body.removeChild(textArea);
+                });
+            } else {
+                document.execCommand('copy');
+                const successMsg = activePane.querySelector('.copy-success');
+                if (successMsg) {
+                    successMsg.style.display = 'block';
+                    setTimeout(function() {
+                        successMsg.style.display = 'none';
+                    }, 2000);
+                }
+                document.body.removeChild(textArea);
+            }
+        } catch (err) {
+            console.error('Copy failed: ', err);
+            document.body.removeChild(textArea);
+        }
+    }
 </script>
 
 </body>
 </html>
+
+
