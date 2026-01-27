@@ -37,6 +37,7 @@
                 <pre class="json-display"><code id="jsonCode">
 {
   "goal": "create a new image inspired by the reference image without copying it",
+  "note": "This output corresponds to a tarot card illustration",
   "prompt": {
     "core_scene": "describe the general context of the original image in a generic way",
     "required_difference": "change some key elements such as colors, layout, characters, or props",
@@ -70,7 +71,7 @@
       "prohibited_content": "strictly prohibit any horror, creepy, frightening, disturbing, unsettling, gore, undead, demonic, occult, cursed, or grotesque themes",
       "anatomical_prohibition": "strictly prohibit unnatural, mutated, deformed, elongated, dislocated, broken, or AI-glitched anatomy such as extra limbs, missing limbs, distorted joints, uncanny faces, abnormal skulls, hollow eye sockets, or other non-human abnormalities",
       "psychological_prohibition": "strictly prohibit fear-based, threat-based, terror-based, or shock-based expressions, aesthetics, or atmosphere",
-      "tone_requirement": "the image must remain safe, natural, human-recognizable, calm, neutral, elegant, or cinematic with no horror, no uncanny valley effects, no demonic symbolism, and no visual discomfort"
+      "tone_requirement": "image must be safe, natural, human-recognizable, calm, neutral, without horror, without uncanny valley effects, and without demonic symbolism"
     }
   },
   "output_requirements": {
@@ -82,6 +83,7 @@
     "text_handling_rule": "any text, symbols, or numbers appearing in the original image must be preserved exactly in the new image"
   }
 }
+
 
 </code></pre>
             </div>
@@ -276,6 +278,7 @@ final List&lt;String&gt; tarotLoadingMessagesDream = [
 const jsonContent = `
 {
   "goal": "create a new image inspired by the reference image without copying it",
+  "note": "This output corresponds to a tarot card illustration",
   "prompt": {
     "core_scene": "describe the general context of the original image in a generic way",
     "required_difference": "change some key elements such as colors, layout, characters, or props",
@@ -309,7 +312,7 @@ const jsonContent = `
       "prohibited_content": "strictly prohibit any horror, creepy, frightening, disturbing, unsettling, gore, undead, demonic, occult, cursed, or grotesque themes",
       "anatomical_prohibition": "strictly prohibit unnatural, mutated, deformed, elongated, dislocated, broken, or AI-glitched anatomy such as extra limbs, missing limbs, distorted joints, uncanny faces, abnormal skulls, hollow eye sockets, or other non-human abnormalities",
       "psychological_prohibition": "strictly prohibit fear-based, threat-based, terror-based, or shock-based expressions, aesthetics, or atmosphere",
-      "tone_requirement": "the image must remain safe, natural, human-recognizable, calm, neutral, elegant, or cinematic with no horror, no uncanny valley effects, no demonic symbolism, and no visual discomfort"
+      "tone_requirement": "image must be safe, natural, human-recognizable, calm, neutral, without horror, without uncanny valley effects, and without demonic symbolism"
     }
   },
   "output_requirements": {
@@ -321,6 +324,7 @@ const jsonContent = `
     "text_handling_rule": "any text, symbols, or numbers appearing in the original image must be preserved exactly in the new image"
   }
 }
+
 `;
 
 function copyJson() {
