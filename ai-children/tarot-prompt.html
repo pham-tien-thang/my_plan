@@ -35,21 +35,44 @@
                 </button>
                 <div class="copy-success" id="copySuccess">✓ Đã copy!</div>
                 <pre class="json-display"><code id="jsonCode">{
+{
   "goal": "create a new image inspired by the reference image without copying it",
   "prompt": {
     "core_scene": "describe the general context of the original image in a generic way",
     "required_difference": "change some key elements such as colors, layout, characters, or props",
-    "visual_style": "maintain the overall style: 3D/2D, photorealistic, minimal, cartoon, etc.",
+    "visual_style": "reinterpret the scene with a 'silver moonlight' theme and a European Medieval aesthetic without horror elements",
     "composition_changes": [
       "rearrange the positions of small objects",
       "change size proportions"
     ],
     "detail_modifications": [
       "change materials",
-      "slightly adjust lighting",
-      "slightly change patterns/textures",
+      "adjust lighting",
+      "change patterns/textures",
       "slightly modify shapes"
-    ]
+    ],
+    "character_constraints": {
+      "gender": "must preserve the gender of the original character",
+      "action": "may slightly modify the main action/pose of the character while keeping the intent recognizable",
+      "outfit": "character attire should follow European Medieval fashion or armor styles without horror motifs",
+      "expression_and_anatomy": "must appear normal, natural, and non-disturbing",
+      "emotion": "may express calm, serious, noble, or mysterious emotions without fear-based expressions"
+    },
+    "scene_constraints": {
+      "camera_view": "must preserve the overall camera angle and framing",
+      "setting": "environment and props should match European Medieval architecture, landscapes, or interiors"
+    },
+    "color_constraints": {
+      "color_palette": "colors may be modified, with encouragement for silver, moonlight, cool tones, and medieval textures such as steel, stone, and worn fabric",
+      "allowed_modifications": "color shifts and palette changes are allowed as long as they do not introduce horror elements"
+    },
+    "content_safety_constraints": {
+      "horror_factor": "completely remove all horror, creepy, disturbing, frightening, unsettling, gore, undead, or grotesque elements from the image"
+    },
+    "theme_enhancements": {
+      "moonlight": "emphasize silver moonlight atmosphere through soft cool lighting and subtle glow",
+      "medieval": "use European Medieval visual language for clothing, architecture, props, symbols, and landscape"
+    }
   },
   "output_requirements": {
     "copyright_safe": true,
@@ -57,8 +80,10 @@
     "format": "PNG or JPG",
     "resolution": "high",
     "preserve_original_text": true,
-    "text_handling_rule": "any text, symbols, or numbers appearing in the original image must be preserved exactly in the new image"
+    "text_handling_rule": "any text, symbols, or numbers appearing in the original image must be preserved exactly"
   }
+}
+
 }</code></pre>
             </div>
             <a href="../ai-prompt.html" class="back-button">← Quay lại</a>
