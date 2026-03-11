@@ -35,49 +35,39 @@
                 </button>
                 <div class="copy-success" id="copySuccess">✓ Đã copy!</div>
                 <pre class="json-display"><code id="jsonCode">{
-  "object_name": "Ghi tên thứ muốn tạo vào đây",
-
-  "style_name": "Retsy 3D Icon Aesthetic",
-  "retexture_mode": "stylized_3d_overlay",
-
-  "object_analysis": {
-    "preserve_silhouette": true,
-    "geometry_sensitive_mapping": true,
-    "detail_retention": "moderate — emphasize smooth shapes and clear outlines"
-  },
-
-  "material_properties": {
-    "base_material": [
-      "smooth matte plastic",
-      "glossy enamel plastic"
-    ],
-    "surface_details": [
-      "rounded corners and edges",
-      "soft, toy-like finish",
-      "minimal seam lines",
-      "subtle specular reflections"
-    ]
-  },
-
+  "object": "Ghi thứ muốn tạo vào đây",
+  "style": "photorealistic 3D render",
+  "material": "glass with transparent and iridescent effects",
+  "surface_texture": "smooth, polished with subtle reflections and refractive effects",
   "lighting": {
-    "type": "studio soft light",
-    "intensity": "medium",
-    "shadows": "soft contact shadows",
-    "highlight_behavior": "small glossy highlights on curved surfaces"
+    "type": "studio HDRI",
+    "intensity": "high",
+    "direction": "angled top-left key light with soft ambient fill",
+    "accent_colors": ["blue", "green", "purple"],
+    "reflections": true,
+    "refractions": true,
+    "dispersion_effects": true,
+    "bloom": true
   },
-
-  "color_palette": {
-    "dominant_colors": ["#2F7056", "#EAE5E0", "#2A2D2E"],
-    "accent_colors": ["#B5832F", "#F5E9C8"]
+  "color_scheme": {
+    "primary": "transparent glass with iridescent blue, green, and purple hues",
+    "secondary": "crystal-clear glass",
+    "highlights": "soft rainbow-like reflections",
+    "rim_light": "soft reflective edge lighting"
   },
-
   "background": {
-    "color": "#F3F1EE",
+    "color": "#000000",
     "type": "solid",
-    "texture": "none"
+    "vignette": false,
+    "texture": "none",
+    "gradient": false
+  },
+  "post_processing": {
+    "chromatic_aberration": true,
+    "glow": true,
+    "high_contrast": true,
+    "sharp_details": true
   }
-}
-
 }</code></pre>
             </div>
             <a href="../ai-prompt.html" class="back-button">← Quay lại</a>
